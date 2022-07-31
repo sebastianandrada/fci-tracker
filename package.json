@@ -1,0 +1,17 @@
+{
+  "name": "fci-tracker",
+  "version": "1.0.0",
+  "description": "A simply tool to get diary fci yields",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "sebastian.andrada",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "dotenv": "^16.0.1",
+    "node-schedule": "^2.1.0",
+    "telegraf": "^4.8.6"
+  }
+}
