@@ -58,12 +58,12 @@ class Tracker {
   }
 
   getMessageForMsg = (fciName, fciData) => {
-    const diaryyYield = parseFloat(fciData.diaria.rendimientos.day.rendimiento);
-    const monthyYield = parseFloat(fciData.diaria.rendimientos.month.rendimiento);
+    const diaryYield = parseFloat(fciData.diaria.rendimientos.day.rendimiento);
+    const monthlyYield = parseFloat(fciData.diaria.rendimientos.month.rendimiento);
     const dateYield = fciData.diaria.rendimientos.day.fecha;
     return `📈 ${fciName} - ${dateYield}
-    ${diaryyYield < 0 ? "🔴" : "🟢" } diario: ${diaryyYield}
-    ${monthyYield < 0 ? "🔴" : "🟢" } mensual: ${monthyYield}
+    ${diaryYield < 0 ? "🔴" : "🟢" } diario: ${diaryYield}
+    ${monthlyYield < 0 ? "🔴" : "🟢" } mensual: ${monthlyYield}
     `
   }
 }
