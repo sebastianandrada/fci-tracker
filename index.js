@@ -2,7 +2,7 @@ const axios = require("axios"),
   schedule = require("node-schedule");
 const { Telegraf } = require("telegraf");
 require('dotenv').config();
-const fcis = require('./fcis')
+const fcis = require('./fcis.json')
 
 class Tracker {
   constructor(telegramBot) {
@@ -19,7 +19,6 @@ class Tracker {
 
     schedule.scheduleJob(rule, () => {
       this.setDataAndNotify();
-      
     })
   }
 
