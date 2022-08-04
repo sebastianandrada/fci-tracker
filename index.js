@@ -32,18 +32,6 @@ class Tracker {
     console.info("update sent!", new Date().toLocaleTimeString("es-AR"));
   }
 
-  getDataFromFCI = async (fund, fundClass) => {
-    try {
-      const result = await axios.get(
-        `https://api.cafci.org.ar/fondo/${fund}/clase/${fundClass}/ficha`
-      );
-
-      return result.data.data.info;
-    } catch (err) {
-      throw new Error("Error in data fetch fund");
-    }
-  }
-
   getDataFromFCIS = async fundList => {
     const fciDataList = new Array();
     try {
@@ -55,6 +43,18 @@ class Tracker {
       throw new Error("Error in data fetch list of funds")
     }
     return fciDataList;
+  }
+
+  getDataFromFCI = async (fund, fundClass) => {
+    try {
+      const result = await axios.get(
+        `https://api.cafci.org.ar/fondo/${fund}/clase/${fundClass}/ficha`
+      );
+
+      return result.data.data.info;
+    } catch (err) {
+      throw new Error("Error in data fetch fund");
+    }
   }
 
   getMessageForMsg = (fciName, fciData) => {
